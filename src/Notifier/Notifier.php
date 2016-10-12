@@ -39,17 +39,17 @@ class Notifier implements NotifierInterface
      *
      * @return self
      */
-    public function notify($template, $users, $parameters = [])
+    public function notify($template, $users, $parameters = array())
     {
         $content = $this->templating->render(
             $template,
             $parameters
         );
 
-        $notification = [
+        $notification = array(
             'content' => $content,
             'users'   => json_encode($users)
-        ];
+        );
 
         $this->redisClient->publish('notification', json_encode($notification));
     }
