@@ -1,0 +1,35 @@
+{
+    "name": "ack/notification-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony real time notification system",
+    "keywords": [ "notification", "symfony", "redis", "nodejs" ],
+    "homepage": "https://github.com/Acrack/AckNotificationBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Acrack",
+            "homepage": "https://github.com/Acrack",
+            "email": "yehya.latti@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^5.3.9 || ^7.0",
+        "symfony/framework-bundle": "^2.7 || ^3.0",
+        "predis/predis": "^1.1",
+        "snc/redis-bundle": "2.x-dev"
+    },
+    "require-dev": {
+    },
+    "suggest": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Ack\\NotificationBundle\\": ""
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x"
+        }
+    }
+}

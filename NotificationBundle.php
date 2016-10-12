@@ -1,9 +1,9 @@
 <?php
 
-namespace AppBundle;
+namespace Ack\NotificationBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class AppBundle extends Bundle
+class AckNotificationBundle extends Bundle
 {
 }
