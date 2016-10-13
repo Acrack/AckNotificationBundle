@@ -1,0 +1,14 @@
+{
+    "network": {
+        "ip": "127.0.0.1",
+        "port": 1337
+    },
+    "application": {
+        "interval": 50,
+        "limit": 10000
+    },
+    "config": {
+        "verbose": true,
+        "trace": true
+    }
+}
