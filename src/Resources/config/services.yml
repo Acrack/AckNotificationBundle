@@ -1,7 +1,0 @@
-services:
-    # Notifier
-    ack.notifier:
-        class: Ack\NotificationBundle\Notifier\Notifier
-        arguments:
-            - "@templating"
-            - "@snc_redis.default_client"
