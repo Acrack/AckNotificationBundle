@@ -7,9 +7,14 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Acrack",
+            "name": "Yehya LATTI",
             "homepage": "https://github.com/Acrack",
             "email": "yehya.latti@gmail.com"
+        },
+        {
+            "name": "Abdelhak HAFFAF",
+            "homepage": "https://github.com/haflit21",
+            "email": "abdelhak.haffaf@gmail.com"
         }
     ],
     "require": {
