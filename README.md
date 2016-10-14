@@ -17,7 +17,7 @@ Register the bundle in your app/AppKernel.php file :
     );
 
 
-
+```javascript
 <script src="http://flash.com.local:1337/socket.io/socket.io.js"></script>
 
 <script>
@@ -27,7 +27,9 @@ Register the bundle in your app/AppKernel.php file :
 </script>
 
 <script src="{{ asset('js/jquery.min.js') }}"></script>
+```
 
+```twig
 {% if app.user is not null %}
     <script>
         var userId = {{ app.user.id }};
@@ -42,6 +44,7 @@ Register the bundle in your app/AppKernel.php file :
 
     <script src="{{ asset('js/notification.js') }}"></script>
 {% endif %}
+```
 
 ```yaml
 snc_redis:
@@ -51,3 +54,4 @@ snc_redis:
             alias: default
             dsn: redis://localhost
             logging: %kernel.debug%
+```
