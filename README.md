@@ -6,9 +6,9 @@ Introduction
 
 This bundle offers a predefined architecture for a notification system using Redis and Node.js
 
-Here is little diagram of what happen behind the scene:
+Here is simple diagram of what happen behind the scene:
 
-![Alt text](diagram.png?raw=true "Diagram")
+![Alt text](diagram.png?raw=true "Diag")
 
 Each messages contains a content rendered by twig and an array of the users id.
 
@@ -29,6 +29,14 @@ Register the bundle in your app/AppKernel.php file :
 
 Usage
 ------------
+
+```php
+$this->get('ack.notifier')->notify(
+    ':notification:test.html.twig', // Any twig file
+    array(1, 2, 3), // Array of the users id that need to be notified
+    array() // Optional parameters according the your twig view
+);
+```
 
 ```javascript
 <script src="http://your.domain:1337/socket.io/socket.io.js"></script>
