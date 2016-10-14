@@ -30,6 +30,8 @@ Register the bundle in your app/AppKernel.php file :
 Usage
 ------------
 
+From a controller or anywhere you have access to the 'ack.notifier' service:
+
 ```php
 $this->get('ack.notifier')->notify(
     ':notification:test.html.twig', // Any twig file
@@ -37,6 +39,7 @@ $this->get('ack.notifier')->notify(
     array() // Optional parameters according the your twig view
 );
 ```
+Do not forget to load socket.io.js and connect to the server.
 
 ```javascript
 <script src="http://your.domain:1337/socket.io/socket.io.js"></script>
@@ -48,6 +51,8 @@ $this->get('ack.notifier')->notify(
 </script>
 ```
 
+Each of the users will be stored in a Redis hash to have a list of the online users, that hash contains the socketId.
+
 ```twig
 {% if app.user is not null %}
     <script>
@@ -58,6 +63,7 @@ $this->get('ack.notifier')->notify(
     </script>
 {% endif %}
 ```
+Once Node.js receive a notification, you can do that kind of script in your front end.
 
 ```javascript
 socket.on('notification', function (notification) {
