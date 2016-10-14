@@ -72,15 +72,15 @@ That way we have a list of the online users somewhere and each hash contains the
     </script>
 {% endif %}
 ```
-Once Node.js receive a notification, you can do that kind of script in your front end.
+Once Node.js receive a notification, it emits an event 'notification' to each users id, you can do that kind of script in your frontend, to notify users.
 
 ```javascript
 socket.on('notification', function (notification) {
-    $('.notifications').append(notification);
+    // get <div> "notifications" and append "notification"
 });
 ```
 This bundle has a dependency on snc redis, so do not forget to add this on your config.yml
-I recomend using redis for your other needs such as session storing, caching, logging and more here: [a link](https://github.com/snc/SncRedisBundle)
+I recommend using redis for your other needs such as session storing, caching, logging and more here: [SncRedisBundle](https://github.com/snc/SncRedisBundle)
 
 ```yaml
 snc_redis:
