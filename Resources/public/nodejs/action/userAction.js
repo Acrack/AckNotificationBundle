@@ -8,10 +8,10 @@ module.exports = {
         'use strict';
 
         var appUser = {
-            id         : user.id,
-            session_id : user.sessionId,
-            socket_id  : socket.id,
-            last_login :  (new Date()).getTime()
+            id           : user.id,
+            session_id   : user.sessionId,
+            socket_id    : socket.id,
+            last_refresh : (new Date()).getTime()
         };
 
         redisManager.deleteUserKeys("user:" + user.id + "_*");

@@ -10,7 +10,7 @@ function RedisManager() {
     redisManager = this;
 
     this.addUser = function (key, user) {
-        redisClient.HMSET(key, user, function(err, res) {
+        redisClient.hmset(key, user, function(err, res) {
 
         });
     }
