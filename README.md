@@ -76,7 +76,7 @@ Once Node.js receive a notification, it emits an event 'notification' to each us
 
 ```javascript
 socket.on('notification', function (notification) {
-    // get <div> "notifications" and append "notification"
+    // get <div> "notifications" and append notification
 });
 ```
 This bundle has a dependency on snc redis, so do not forget to add this on your config.yml
