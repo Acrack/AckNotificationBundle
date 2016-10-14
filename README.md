@@ -27,6 +27,14 @@ Register the bundle in your app/AppKernel.php file :
         ...
     );
 
+If you already have a server node running on your application you have an example of implementation in example_server.js
+
+Else, after the assets install, you can go in /web/bundles/acknotification/nodejs and:
+
+    npm install
+
+    node server.js
+
 Usage
 ------------
 
@@ -51,7 +59,8 @@ Do not forget to load socket.io.js and connect to the server.
 </script>
 ```
 
-Each of the users will be stored in a Redis hash to have a list of the online users, that hash contains the socketId.
+After you have emitted the 'loaded' event from your frontend, Node.js will catch it and store your user in a Redis hash.
+That way we have a list of the online users somewhere and each hash contains the socketId.
 
 ```twig
 {% if app.user is not null %}
@@ -70,9 +79,8 @@ socket.on('notification', function (notification) {
     $('.notifications').append(notification);
 });
 ```
-
-
-
+This bundle has a dependency on snc redis, so do not forget to add this on your config.yml
+I recomend using redis for your other needs such as session storing, caching, logging and more here: [a link](https://github.com/snc/SncRedisBundle)
 
 ```yaml
 snc_redis:
