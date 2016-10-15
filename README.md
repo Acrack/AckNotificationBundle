@@ -6,7 +6,7 @@ Introduction
 
 This bundle offers a predefined architecture for a notification system using Redis and Node.js
 
-Here is simple diagram of what happen behind the scene:
+Everything is based on the Pub/Sub (publish/subscribe) system of Redis, here is simple diagram of what happen behind the scene:
 
 ![Alt text](diagram.png?raw=true "Diag")
 
