@@ -11,10 +11,10 @@ interface NotifierInterface
      * Notify users
      *
      * @param string $template
-     * @param array  $users
+     * @param mixed  $users
      * @param array  $parameters
      *
      * @return self
      */
-    public function notify($template, $users, $parameters = []);
+    public function notify($template, $users, $parameters = array());
 }

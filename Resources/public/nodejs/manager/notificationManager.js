@@ -8,6 +8,10 @@ function NotificationManager() {
     this.notify = function (io, socketId, notification) {
         io.to(socketId).emit('notification', notification);
     }
+
+    this.notifyAll = function (io, notification) {
+        io.sockets.emit('notification', notification);
+    }
 }
 
 // Singleton NotificationManager

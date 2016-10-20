@@ -34,7 +34,7 @@ class Notifier implements NotifierInterface
      * Notify users
      *
      * @param string $template
-     * @param array  $users
+     * @param mixed  $users
      * @param array  $parameters
      *
      * @return self
@@ -48,7 +48,7 @@ class Notifier implements NotifierInterface
 
         $notification = array(
             'content' => $content,
-            'users'   => json_encode($users)
+            'users'   => is_array($users) ? json_encode($users) : $users
         );
 
         $this->redisClient->publish('notification', json_encode($notification));

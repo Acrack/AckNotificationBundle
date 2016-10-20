@@ -9,7 +9,6 @@ module.exports = {
 
         var appUser = {
             id           : user.id,
-            session_id   : user.sessionId,
             socket_id    : socket.id,
             last_refresh : (new Date()).getTime()
         };

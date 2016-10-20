@@ -30,20 +30,24 @@ function NotificationListener() {
         redisSubClient.subscribe("notification");
 
         redisSubClient.on("message", function (channel, message) {
-            var
-                notification = JSON.parse(message),
-                users        = JSON.parse(notification.users);
+            var notification = JSON.parse(message);
 
-            for (var i in users) {
-                redisClient.keys("user:" + users[i] + "_\/#*", function(err, keys) {
-                    for (var key in keys) {
-                        var userKey = keys[key];
+            if (notification.users === '*') {
+                notificationManager.notifyAll(io, notification.content);
+            } else {
+                var users = JSON.parse(notification.users);
 
-                        redisClient.hgetall(userKey, function(err, user) {
-                            notificationManager.notify(io, user.socket_id, notification.content);
-                        });
-                    }
-                });
+                for (var i in users) {
+                    redisClient.keys("user:" + users[i] + "_\/#*", function(err, keys) {
+                        for (var key in keys) {
+                            var userKey = keys[key];
+
+                            redisClient.hgetall(userKey, function(err, user) {
+                                notificationManager.notify(io, user.socket_id, notification.content);
+                            });
+                        }
+                    });
+                }
             }
         });
     };
