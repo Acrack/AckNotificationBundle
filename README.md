@@ -43,7 +43,7 @@ From a controller or anywhere you have access to the 'ack.notifier' service:
 ```php
 $this->get('ack.notifier')->notify(
     ':notification:test.html.twig', // Any twig file
-    array(1, 2, 3), // Array of the users id that need to be notified
+    array(1, 2, 3), // Array of the users id that need to be notified, use '*' if you want to notify everyone (anonymous users included)
     array() // Optional parameters according the your twig view
 );
 ```
@@ -66,8 +66,7 @@ That way we have a list of the online users somewhere and each hash contains the
 {% if app.user is not null %}
     <script>
         socket.emit('loaded', {
-            id        : '{{ app.user.id }}',
-            sessionId : '{{ app.session.id }}',
+            id : '{{ app.user.id }}'
         });
     </script>
 {% endif %}
