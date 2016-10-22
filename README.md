@@ -63,13 +63,11 @@ After you have emitted the 'loaded' event from your frontend, Node.js will catch
 That way we have a list of the online users somewhere and each hash contains the socketId.
 
 ```twig
-{% if app.user is not null %}
-    <script>
-        socket.emit('loaded', {
-            id : '{{ app.user.id }}'
-        });
-    </script>
-{% endif %}
+<script>
+    socket.emit('loaded', {
+        id : '{{ app.user is not null ? app.user.id : "0" }}'
+    });
+</script>
 ```
 Once Node.js receive a notification, it emits an event 'notification' to each users id, you can do that kind of script in your frontend, to notify users.
 
