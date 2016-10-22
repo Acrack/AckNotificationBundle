@@ -65,7 +65,7 @@ That way we have a list of the online users somewhere and each hash contains the
 ```twig
 <script>
     socket.emit('loaded', {
-        id : '{{ app.user is not null ? app.user.id : "0" }}'
+        id : '{{ app.user is not null ? app.user.id : "anon." }}'
     });
 </script>
 ```
