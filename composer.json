@@ -21,7 +21,7 @@
         "php": "^5.3.9 || ^7.0",
         "symfony/framework-bundle": "^2.7 || ^3.0",
         "predis/predis": "^1.1",
-        "snc/redis-bundle": "2.x-dev"
+        "snc/redis-bundle": "^2.0"
     },
     "autoload": {
         "psr-4": {
